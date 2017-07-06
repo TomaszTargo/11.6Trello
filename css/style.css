@@ -1,3 +1,14 @@
 .card-placeholder {
 	background: red;
 }
+
+.board h1 {
+	font-size: 48px;
+}
+
+.column-container .column{
+	float: left;
+	position: relative;
+	margin: 60px;
+	padding: 20px;
+}

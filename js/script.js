@@ -55,11 +55,6 @@ $(function(){
     	}
 	};
 
-	//dodawanie kart
-	this.$element.children('ul').append(card.$element);
-    
-    //usowanie kolumn
-    this.$element.remove();
 
     function Card(description) {
 		var self = this;
@@ -99,12 +94,10 @@ $(function(){
       		initSortable();
     	},
     	$element: $('#board .column-container')
+
 	};
 
-	addColumn: function(column) {
-		this.$element.append(column.$element);
-		initSortable(); //About this feature we will tell later
-	}
+
 
 	$('#board .column-container')
 
@@ -123,22 +116,22 @@ $(function(){
     	board.addColumn(column);
   	});
 
-  		// TWORZENIE KOLUMN
-var todoColumn = new Column('To do');
-var doingColumn = new Column('Doing');
-var doneColumn = new Column('Done');
+  	// TWORZENIE KOLUMN
+	var todoColumn = new Column('To do:');
+	var doingColumn = new Column('Doing:');
+	var doneColumn = new Column('Done:');
 
-// DODAWANIE KOLUMN DO TABLICY
-board.addColumn(todoColumn);
-board.addColumn(doingColumn);
-board.addColumn(doneColumn);
+	// DODAWANIE KOLUMN DO TABLICY
+	board.addColumn(todoColumn);
+	board.addColumn(doingColumn);
+	board.addColumn(doneColumn);
 
-// TWORZENIE NOWYCH EGZEMPLARZY KART
-var card1 = new Card('New task');
-var card2 = new Card('Create kanban boards');
+	// TWORZENIE NOWYCH EGZEMPLARZY KART
+	var card1 = new Card('New task');
+	var card2 = new Card('Create kanban boards');
 
-// DODAWANIE KART DO KOLUMN
-todoColumn.addCard(card1);
-doingColumn.addCard(card2);
+	// DODAWANIE KART DO KOLUMN
+	todoColumn.addCard(card1);
+	doingColumn.addCard(card2);
    
 });
